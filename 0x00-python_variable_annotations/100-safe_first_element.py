@@ -3,13 +3,12 @@
 Module for safe_first_element function
 """
 
-from typing import Sequence, Any, Union
+import typing
 
 
-def safe_first_element(lst: Sequence) -> Union[Any, None]:
-    """
-    Return the first element of a sequence safely
-    """
+def safe_first_element(lst: typing.Sequence[typing.Any]) -> \
+        typing.Union[typing.Any, None]:
+    """Duck-typed annotation"""
     if lst:
         return lst[0]
     else:
