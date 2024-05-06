@@ -3,7 +3,8 @@
 Measures the total execution time for wait_n(n, max_delay).
 """
 import time
-from typing import Callable
+import asyncio
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 def measure_time(n: int, max_delay: int) -> float:
     """
@@ -15,7 +16,6 @@ def measure_time(n: int, max_delay: int) -> float:
     return (end_time - start_time) / n
 
 if __name__ == "__main__":
-    from 1-concurrent_coroutines import wait_n
     n = 5
     max_delay = 9
     print(measure_time(n, max_delay))
